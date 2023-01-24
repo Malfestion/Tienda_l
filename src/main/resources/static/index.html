@@ -1,20 +1,67 @@
 <!DOCTYPE html>
-<html>
+<!-- lang es usado para informar el idioma de la pagina -->
+<html lang="es">
     <head>
         <title>Techshop</title>
         <meta charset="UTF-8">
+        <!-- La siguiente etiqueta es usada para informar a los SEO de busqueda -->
+        <meta name="description" content="TechShop tienda en linea"/>
+        <meta name="keyword" content="html,css,ufidelitas,web"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <a href="ejemplo7.html">Back</a>
-        <a href="index.html">Home</a>
-        <a href="ejemplo2.html">Next</a>
-        <hr/>
+        <header id="header">
+            <nav>
+                <a href="ejemplo7.html">&triangleleft;Back</a>
+                <a href="index.html">Home</a>
+                <a href="ejemplo2.html">Next&triangleright;</a>
+            </nav>
+            <hr/>
+            <h1>Home</h1>
+        </header>
         
-        <h1 style="text-align: center; background: black; color: white">Home</h1>
-        <p><strong>Esto es un párrafo</strong></p>
-        <p>Lorem <u>ipsum dolor sit</u> amet <i>consectetur</i> adipiscing elit suspendisse, torquent ullamcorper maecenas quam sem at morbi tempus fusce, iaculis integer sapien nisl odio et netus. Duis cum mi pharetra imperdiet lacus vitae in morbi, odio a felis consequat vivamus class primis vehicula senectus, aptent leo proin tortor quis nam auctor. Parturient ornare tempus semper pulvinar fringilla morbi habitasse massa, donec vulputate ligula sagittis risus proin primis ultrices imperdiet, luctus euismod sem elementum cras sed arcu.</p>
-        <p style="text-align: center">Sem ad interdum conubia congue leo aliquam urna, auctor sociis morbi id euismod fames libero facilisis, rhoncus sagittis odio massa ultrices tortor. Himenaeos nec feugiat nibh arcu vehicula ut malesuada turpis odio cras molestie, tortor interdum condimentum cursus hendrerit taciti tempor pellentesque nostra non ullamcorper, maecenas aliquam nisl risus lectus quis urna cubilia vestibulum sodales. Pellentesque natoque maecenas arcu curae litora vulputate, et quam cum dui consequat hac suspendisse, iaculis mi per volutpat dapibus.</p>
-        <p style="text-align: right">Molestie in volutpat cursus consequat ornare condimentum aliquam massa sapien nec nibh quam quis inceptos, vehicula nunc tempor luctus dignissim nisl vestibulum hac dapibus fringilla senectus sociis eget. Est ut ultrices nisi ullamcorper habitant orci leo iaculis taciti a, fermentum sapien maecenas hac aptent eros praesent id massa dignissim, penatibus fusce tempus venenatis quis mi blandit himenaeos dis. Primis suspendisse vehicula auctor turpis nunc etiam porta conubia lacus, volutpat accumsan fringilla ac et himenaeos aptent convallis, felis rhoncus nisl id nisi facilisi vestibulum praesent.</p>
-    
+        <aside id="aside">
+            <h2>Ultimas noticias...</h2>
+            <p>Los productos de la tienda....</p>
+        </aside>
+        <div id="contenido">
+            <section>
+                <article>
+                    <header>
+                        <h2>Producto de la semana</h2>
+                    </header>
+                    <p>El producto Alienware lleva su nombre en honor a la pelicula de culto <cite>Aliens</cite> el septimo pasajero</p>
+                    <figure>
+                        <img src="img/redpanda.jpg" alt=""/>
+                        <figcaption>La novedad de la semana</figcaption>
+                    </figure>
+                    <footer>
+                        <a href="#">Comprar</a>
+                    </footer>
+                </article>
+                <article>
+                    <header>
+                        <h2>La Novedad</h2>
+                    </header>
+                    <p>El producto Alienware lleva su nombre en honor a la pelicula de culto <cite>Aliens</cite> el septimo pasajero</p>
+                    <figure>
+                        <img src="img/redpanda.jpg" alt=""/>
+                        <figcaption>La novedad de la semana</figcaption>
+                    </figure>
+                    <footer>
+                        <a href="#">Comprar</a>
+                    </footer>
+                </article>
+            </section><!-- contenido principal de la pagina -->
+
+            <section>
+                <article>
+                    <p>Usted ha escuchado el termino leer la letra <small>pequeña</small> refiriendose a terminologia legal</p>
+                </article>
+            </section>
+        </div>
+        <footer id="footer">
+            Desarrollo tecnologico 2023 &COPY; <address>+506 45455445</address>
+        </footer>
     </body>
 </html>
