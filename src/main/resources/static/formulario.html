@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- lang es usado para informar el idioma de la pagina -->
+<html lang="es">
+    <head>
+        <title>Techshop</title>
+        <meta charset="UTF-8">
+        <!-- La siguiente etiqueta es usada para informar a los SEO de busqueda -->
+        <meta name="description" content="TechShop tienda en linea"/>
+        <meta name="keyword" content="html,css,ufidelitas,web"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header id="header">
+            <nav class="nav">
+                <a href="index.html" class="logo nav-link">Techshop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a href="ejemplo4.html" class="nav-menu-link nav-link">&triangleleft;</a></li>
+                    <li class="nav-menu-item"><a href="ejemplo2.html" class="nav-menu-link nav-link">&triangleright;</a></li>
+                    <li class="nav-menu-item"><a href="audios.html" class="nav-menu-link nav-link">audios</a></li>
+                    <li class="nav-menu-item"><a href="videos.html" class="nav-menu-link nav-link">videos</a></li>
+                    <li class="nav-menu-item"><a href="iframe.html" class="nav-menu-link nav-link">iframe</a></li>
+                    <li class="nav-menu-item"><a href="formularios.html" class="nav-menu-link nav-link">form</a></li>
+                </ul>
+
+            </nav>
+            <hr/>
+            <h1>Home</h1>
+        </header>
+        
+        <aside id="aside">
+            <h2>Ultimas noticias...</h2>
+            <p>Los productos de la tienda....</p>
+        </aside>
+        <div id="contenido">
+            <section>
+                <article>
+                    <header>
+                        <h3>Formulario</h3>
+                    </header>
+                    <form name="info" action="registro.jsp" method="post">
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" value="" size="35" />
+                        <br>
+                        <label>Pass</label>
+                        <input type="password" name="clave" value="" size="10" />
+                        <br>
+                        <input type="hidden" name="ID" value="1" />
+                        <label>Direccion</label>
+                        <textarea name="direccion" rows="4" cols="20">
+San Jose, Costa Rica, del palo de mango 400m Norte y 50 Sur
+                        </textarea>
+                        <br>
+                        <label>Nivel escolar</label>
+                        <select name="Nivel">
+                            <option>Primaria</option>
+                            <option>Secundaria</option>
+                            <option>Universidad</option>
+                            
+                        </select>
+                        <br>
+                        <label>Sus pasatiempos</label>
+                        <br>
+                        <label>futbol</label>
+                        <input type="checkbox" name="futbol" value="futbol" checked="checked" />
+                        <label>baloncesto</label>
+                        <input type="checkbox" name="baloncesto" value="baloncesto" />
+                        <label>pingpong</label>
+                        <input type="checkbox" name="pingpong" value="pingpong" />
+                        <br>
+                        <input type="submit" value="Enviar" name="boton" />
+                    </form>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <p>Usted ha escuchado el termino leer la letra <small>pequeña</small> refiriendose a terminologia legal</p>
+                </article>
+            </section>
+        </div>
+        <footer id="footer">
+            Desarrollo tecnologico 2023 &COPY; <address>+506 45455445</address>
+        </footer>
+    </body>
+</html>
