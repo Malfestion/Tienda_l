@@ -1,4 +1,4 @@
-<html xmlns="http://w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org"><!-- th va a ser un prefijo -->
+<html xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"><!-- th va a ser un prefijo -->
     <head th:replace="~{layout/plantilla :: head}">
         <title>TechShop</title>
         <meta charset="UTF-8"/>
@@ -7,7 +7,7 @@
     <body>
         <!-- 1 Sección para crear el boton de agregar... llamará a una ventana modal-->
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
-            <div class="container">
+            <div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
                 <div class="row">
                     <div class="col-md-3">   
                         <button 
@@ -95,7 +95,7 @@
                                             <td>[[${cliente.nombre}]]</td>
                                             <td>[[${cliente.apellidos}]]</td>
                                             <td>[[${cliente.credito.limite}]]</td>
-                                            <td><a th:href="@{/cliente/eliminar/}+${cliente.idCliente}"
+                                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/cliente/eliminar/}+${cliente.idCliente}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/cliente/modificar/}+${cliente.idCliente}"

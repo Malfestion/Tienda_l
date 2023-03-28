@@ -1,4 +1,4 @@
-<html xmlns:th="http://thymeleaf.org"><!-- th va a ser un prefijo -->
+<html xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"><!-- th va a ser un prefijo -->
     <head th:fragment="head">
         <title>TechShop</title>
         <meta charset="UTF-8"/>
@@ -19,8 +19,8 @@
                     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav">
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <ul class="navbar-nav" sec:authorize="hasRole('ROLE_ADMIN') OR hasRole('ROLE_VENDEDOR')">
                             <li class="nav-item px-2">
                                 <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">[[#{plantilla.clientes}]]</a>
                             </li>
@@ -31,7 +31,26 @@
                              <li class="nav-item px-2">
                                 <a class="nav-menu-link nav-link" th:href="@{/articulo/listado}">[[#{plantilla.articulos}]]</a>
                             </li>
-                        </ul>                        
+                            <li class="nav-item px-2" sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a class="nav-menu-link nav-link" th:href="@{/usuario/listado}">[[#{plantilla.articulos}]]</a>
+                            </li>
+                        </ul>    
+                        <ul class="navbar-nav" sec:authorize="!isAuthenticated()">
+                            <li class="nav-item px-2">
+                                <a class="nav-menu-link nav-link" th:href="@{/login}"><i class='fas fa-sign-in'></i></a>
+                            </li>                                     
+                        </ul>
+                        <ul class="navbar-nav" sec:authorize="isAuthenticated()">
+                            <li class="nav-item text-white my-auto">
+                                <i class="fas fa-user"></i> <span sec:authentication="name">Alberto</span>
+                                
+                            </li>
+                            <li class="nav-item my-auto">
+                                <form method="post" th:action="@{/logout}">
+                                <button type="submit" class="btn btn-dark"><i class="fas fa-sign-out-alt"></i></button>
+                                </form>
+                            </li>                                     
+                        </ul>
                     </div>                    
                 </div>
             </nav>
@@ -52,7 +71,7 @@
                 <div class="col">
                     <p class="lead text-center">
                         [[#{plantilla.derechos}]] | <a th:href="@{/(lang=es)}">Es</a> | <a th:href="@{/(lang=en)}">En</a>
-                        <form method="POST" th:action="@{/logout}" style="display: inline">
+                       
                             <a hred="#" onclick="this.parentNode.submit();">Logout</a>
                         </form>
                     </p>

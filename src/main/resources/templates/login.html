@@ -1,0 +1,53 @@
+<html xmlns="http://w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org"><!-- th va a ser un prefijo -->
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"></header>
+        <div class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-md-4"></div><!-- comment -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-success">
+                            <h2>[[#{login.login}]]</h2>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" th:action="@{/login}">
+                                <!-- Username -->
+                                <div class="form-group row my-3">
+                                    <label class="col-md-5 my-auto" for="username">
+                                        <i class="fas fa-user-lock"></i>
+                                        [[#{login.username}]]:
+                                    </label>
+                                    <div class="col-md-7 my-auto">
+                                        <input class="form-control" type="text" name="username" id="username"/>
+                                    </div>                     
+                                </div>
+                                <!-- Password -->
+                                <div class="form-group row my-3">
+                                    <label class="col-md-5 my-auto" for="username">
+                                        <i class="fas fa-key"></i>
+                                        [[#{login.password}]]:
+                                    </label>
+                                    <div class="col-md-7 my-auto">
+                                        <input class="form-control" type="password" name="password" id="password"/>
+                                    </div>                     
+                                </div>
+                                <!-- Boton -->
+                                <div class="card-footer col text-center">
+                                    <button class="btn btn-success" type="submit" ><i class="fas fa-sign-in-alt"></i>
+                                        [[#{login.login}]]
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>

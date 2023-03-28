@@ -1,0 +1,32 @@
+<html xmlns="http://w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org"><!-- th va a ser un prefijo -->
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"></header>
+        <div class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-md-4"></div><!-- comment -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-danger text-white">
+                            <h2>[[#{e403.titulo}]]</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">[[#{e403.texto}]]</p>
+
+                            <div class="card-footer col text-center">
+                                <a class="btn btn-danger" th:href="@{/}" ><i class="fas fa-arrow-left"></i>
+                                    [[#{accion.regresar}]]
+                                </a>
+                            </div>                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>
